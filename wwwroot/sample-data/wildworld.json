@@ -1,0 +1,998 @@
+[
+  {
+    "countryIso": "AD",
+    "countryName": "Andorra"
+  },
+  {
+    "countryIso": "AE",
+    "countryName": "United Arab Emirates"
+  },
+  {
+    "countryIso": "AF",
+    "countryName": "Afghanistan"
+  },
+  {
+    "countryIso": "AG",
+    "countryName": "Antigua and Barbuda"
+  },
+  {
+    "countryIso": "AI",
+    "countryName": "Anguilla"
+  },
+  {
+    "countryIso": "AL",
+    "countryName": "Albania"
+  },
+  {
+    "countryIso": "AM",
+    "countryName": "Armenia"
+  },
+  {
+    "countryIso": "AO",
+    "countryName": "Angola"
+  },
+  {
+    "countryIso": "AQ",
+    "countryName": "Antarctica"
+  },
+  {
+    "countryIso": "AR",
+    "countryName": "Argentina"
+  },
+  {
+    "countryIso": "AS",
+    "countryName": "American Samoa"
+  },
+  {
+    "countryIso": "AT",
+    "countryName": "Austria"
+  },
+  {
+    "countryIso": "AU",
+    "countryName": "Australia"
+  },
+  {
+    "countryIso": "AW",
+    "countryName": "Aruba"
+  },
+  {
+    "countryIso": "AX",
+    "countryName": "Åland Islands"
+  },
+  {
+    "countryIso": "AZ",
+    "countryName": "Azerbaijan"
+  },
+  {
+    "countryIso": "BA",
+    "countryName": "Bosnia and Herzegovina"
+  },
+  {
+    "countryIso": "BB",
+    "countryName": "Barbados"
+  },
+  {
+    "countryIso": "BD",
+    "countryName": "Bangladesh"
+  },
+  {
+    "countryIso": "BE",
+    "countryName": "Belgium"
+  },
+  {
+    "countryIso": "BF",
+    "countryName": "Burkina Faso"
+  },
+  {
+    "countryIso": "BG",
+    "countryName": "Bulgaria"
+  },
+  {
+    "countryIso": "BH",
+    "countryName": "Bahrain"
+  },
+  {
+    "countryIso": "BI",
+    "countryName": "Burundi"
+  },
+  {
+    "countryIso": "BJ",
+    "countryName": "Benin"
+  },
+  {
+    "countryIso": "BL",
+    "countryName": "Saint Barthélemy"
+  },
+  {
+    "countryIso": "BM",
+    "countryName": "Bermuda"
+  },
+  {
+    "countryIso": "BN",
+    "countryName": "Brunei"
+  },
+  {
+    "countryIso": "BO",
+    "countryName": "Bolivia"
+  },
+  {
+    "countryIso": "BQ",
+    "countryName": "Caribbean Netherlands"
+  },
+  {
+    "countryIso": "BR",
+    "countryName": "Brazil"
+  },
+  {
+    "countryIso": "BS",
+    "countryName": "Bahamas"
+  },
+  {
+    "countryIso": "BT",
+    "countryName": "Bhutan"
+  },
+  {
+    "countryIso": "BV",
+    "countryName": "Bouvet Island"
+  },
+  {
+    "countryIso": "BW",
+    "countryName": "Botswana"
+  },
+  {
+    "countryIso": "BY",
+    "countryName": "Belarus"
+  },
+  {
+    "countryIso": "BZ",
+    "countryName": "Belize"
+  },
+  {
+    "countryIso": "CA",
+    "countryName": "Canada"
+  },
+  {
+    "countryIso": "CC",
+    "countryName": "Cocos Islands"
+  },
+  {
+    "countryIso": "CD",
+    "countryName": "Democratic Republic of the Congo"
+  },
+  {
+    "countryIso": "CF",
+    "countryName": "Central African Republic"
+  },
+  {
+    "countryIso": "CG",
+    "countryName": "Republic of the Congo"
+  },
+  {
+    "countryIso": "CH",
+    "countryName": "Switzerland"
+  },
+  {
+    "countryIso": "CI",
+    "countryName": "Ivory Coast"
+  },
+  {
+    "countryIso": "CK",
+    "countryName": "Cook Islands"
+  },
+  {
+    "countryIso": "CL",
+    "countryName": "Chile"
+  },
+  {
+    "countryIso": "CM",
+    "countryName": "Cameroon"
+  },
+  {
+    "countryIso": "CN",
+    "countryName": "China"
+  },
+  {
+    "countryIso": "CO",
+    "countryName": "Colombia"
+  },
+  {
+    "countryIso": "CR",
+    "countryName": "Costa Rica"
+  },
+  {
+    "countryIso": "CU",
+    "countryName": "Cuba"
+  },
+  {
+    "countryIso": "CV",
+    "countryName": "Cabo Verde"
+  },
+  {
+    "countryIso": "CW",
+    "countryName": "Curaçao"
+  },
+  {
+    "countryIso": "CX",
+    "countryName": "Christmas Island"
+  },
+  {
+    "countryIso": "CY",
+    "countryName": "Cyprus"
+  },
+  {
+    "countryIso": "CZ",
+    "countryName": "Czechia"
+  },
+  {
+    "countryIso": "DE",
+    "countryName": "Germany"
+  },
+  {
+    "countryIso": "DJ",
+    "countryName": "Djibouti"
+  },
+  {
+    "countryIso": "DK",
+    "countryName": "Denmark"
+  },
+  {
+    "countryIso": "DM",
+    "countryName": "Dominica"
+  },
+  {
+    "countryIso": "DO",
+    "countryName": "Dominican Republic"
+  },
+  {
+    "countryIso": "DZ",
+    "countryName": "Algeria"
+  },
+  {
+    "countryIso": "EC",
+    "countryName": "Ecuador"
+  },
+  {
+    "countryIso": "EE",
+    "countryName": "Estonia"
+  },
+  {
+    "countryIso": "EG",
+    "countryName": "Egypt"
+  },
+  {
+    "countryIso": "EH",
+    "countryName": "Western Sahara"
+  },
+  {
+    "countryIso": "ER",
+    "countryName": "Eritrea"
+  },
+  {
+    "countryIso": "ES",
+    "countryName": "Spain"
+  },
+  {
+    "countryIso": "ET",
+    "countryName": "Ethiopia"
+  },
+  {
+    "countryIso": "FI",
+    "countryName": "Finland"
+  },
+  {
+    "countryIso": "FJ",
+    "countryName": "Fiji"
+  },
+  {
+    "countryIso": "FK",
+    "countryName": "Falkland Islands"
+  },
+  {
+    "countryIso": "FM",
+    "countryName": "Micronesia"
+  },
+  {
+    "countryIso": "FO",
+    "countryName": "Faroe Islands"
+  },
+  {
+    "countryIso": "FR",
+    "countryName": "France"
+  },
+  {
+    "countryIso": "GA",
+    "countryName": "Gabon"
+  },
+  {
+    "countryIso": "GB",
+    "countryName": "United Kingdom"
+  },
+  {
+    "countryIso": "GD",
+    "countryName": "Grenada"
+  },
+  {
+    "countryIso": "GE",
+    "countryName": "Georgia"
+  },
+  {
+    "countryIso": "GF",
+    "countryName": "French Guiana"
+  },
+  {
+    "countryIso": "GG",
+    "countryName": "Guernsey"
+  },
+  {
+    "countryIso": "GH",
+    "countryName": "Ghana"
+  },
+  {
+    "countryIso": "GI",
+    "countryName": "Gibraltar"
+  },
+  {
+    "countryIso": "GL",
+    "countryName": "Greenland"
+  },
+  {
+    "countryIso": "GM",
+    "countryName": "Gambia"
+  },
+  {
+    "countryIso": "GN",
+    "countryName": "Guinea"
+  },
+  {
+    "countryIso": "GP",
+    "countryName": "Guadeloupe"
+  },
+  {
+    "countryIso": "GQ",
+    "countryName": "Equatorial Guinea"
+  },
+  {
+    "countryIso": "GR",
+    "countryName": "Greece"
+  },
+  {
+    "countryIso": "GS",
+    "countryName": "South Georgia and the South Sandwich Islands"
+  },
+  {
+    "countryIso": "GT",
+    "countryName": "Guatemala"
+  },
+  {
+    "countryIso": "GU",
+    "countryName": "Guam"
+  },
+  {
+    "countryIso": "GW",
+    "countryName": "Guinea-Bissau"
+  },
+  {
+    "countryIso": "GY",
+    "countryName": "Guyana"
+  },
+  {
+    "countryIso": "HK",
+    "countryName": "Hong Kong"
+  },
+  {
+    "countryIso": "HM",
+    "countryName": "Heard Island and McDonald Islands"
+  },
+  {
+    "countryIso": "HN",
+    "countryName": "Honduras"
+  },
+  {
+    "countryIso": "HR",
+    "countryName": "Croatia"
+  },
+  {
+    "countryIso": "HT",
+    "countryName": "Haiti"
+  },
+  {
+    "countryIso": "HU",
+    "countryName": "Hungary"
+  },
+  {
+    "countryIso": "ID",
+    "countryName": "Indonesia"
+  },
+  {
+    "countryIso": "IE",
+    "countryName": "Ireland"
+  },
+  {
+    "countryIso": "IL",
+    "countryName": "Israel"
+  },
+  {
+    "countryIso": "IM",
+    "countryName": "Isle of Man"
+  },
+  {
+    "countryIso": "IN",
+    "countryName": "India"
+  },
+  {
+    "countryIso": "IO",
+    "countryName": "British Indian Ocean Territory"
+  },
+  {
+    "countryIso": "IQ",
+    "countryName": "Iraq"
+  },
+  {
+    "countryIso": "IR",
+    "countryName": "Iran"
+  },
+  {
+    "countryIso": "IS",
+    "countryName": "Iceland"
+  },
+  {
+    "countryIso": "IT",
+    "countryName": "Italy"
+  },
+  {
+    "countryIso": "JE",
+    "countryName": "Jersey"
+  },
+  {
+    "countryIso": "JM",
+    "countryName": "Jamaica"
+  },
+  {
+    "countryIso": "JO",
+    "countryName": "Jordan"
+  },
+  {
+    "countryIso": "JP",
+    "countryName": "Japan"
+  },
+  {
+    "countryIso": "KE",
+    "countryName": "Kenya"
+  },
+  {
+    "countryIso": "KG",
+    "countryName": "Kyrgyzstan"
+  },
+  {
+    "countryIso": "KH",
+    "countryName": "Cambodia"
+  },
+  {
+    "countryIso": "KI",
+    "countryName": "Kiribati"
+  },
+  {
+    "countryIso": "KM",
+    "countryName": "Comoros"
+  },
+  {
+    "countryIso": "KN",
+    "countryName": "Saint Kitts and Nevis"
+  },
+  {
+    "countryIso": "KP",
+    "countryName": "North Korea"
+  },
+  {
+    "countryIso": "KR",
+    "countryName": "South Korea"
+  },
+  {
+    "countryIso": "KW",
+    "countryName": "Kuwait"
+  },
+  {
+    "countryIso": "KY",
+    "countryName": "Cayman Islands"
+  },
+  {
+    "countryIso": "KZ",
+    "countryName": "Kazakhstan"
+  },
+  {
+    "countryIso": "LA",
+    "countryName": "Laos"
+  },
+  {
+    "countryIso": "LB",
+    "countryName": "Lebanon"
+  },
+  {
+    "countryIso": "LC",
+    "countryName": "Saint Lucia"
+  },
+  {
+    "countryIso": "LI",
+    "countryName": "Liechtenstein"
+  },
+  {
+    "countryIso": "LK",
+    "countryName": "Sri Lanka"
+  },
+  {
+    "countryIso": "LR",
+    "countryName": "Liberia"
+  },
+  {
+    "countryIso": "LS",
+    "countryName": "Lesotho"
+  },
+  {
+    "countryIso": "LT",
+    "countryName": "Lithuania"
+  },
+  {
+    "countryIso": "LU",
+    "countryName": "Luxembourg"
+  },
+  {
+    "countryIso": "LV",
+    "countryName": "Latvia"
+  },
+  {
+    "countryIso": "LY",
+    "countryName": "Libya"
+  },
+  {
+    "countryIso": "MA",
+    "countryName": "Morocco"
+  },
+  {
+    "countryIso": "MC",
+    "countryName": "Monaco"
+  },
+  {
+    "countryIso": "MD",
+    "countryName": "Moldova"
+  },
+  {
+    "countryIso": "ME",
+    "countryName": "Montenegro"
+  },
+  {
+    "countryIso": "MF",
+    "countryName": "Saint Martin"
+  },
+  {
+    "countryIso": "MG",
+    "countryName": "Madagascar"
+  },
+  {
+    "countryIso": "MH",
+    "countryName": "Marshall Islands"
+  },
+  {
+    "countryIso": "MK",
+    "countryName": "North Macedonia"
+  },
+  {
+    "countryIso": "ML",
+    "countryName": "Mali"
+  },
+  {
+    "countryIso": "MM",
+    "countryName": "Myanmar"
+  },
+  {
+    "countryIso": "MN",
+    "countryName": "Mongolia"
+  },
+  {
+    "countryIso": "MO",
+    "countryName": "Macao"
+  },
+  {
+    "countryIso": "MP",
+    "countryName": "Northern Mariana Islands"
+  },
+  {
+    "countryIso": "MQ",
+    "countryName": "Martinique"
+  },
+  {
+    "countryIso": "MR",
+    "countryName": "Mauritania"
+  },
+  {
+    "countryIso": "MS",
+    "countryName": "Montserrat"
+  },
+  {
+    "countryIso": "MT",
+    "countryName": "Malta"
+  },
+  {
+    "countryIso": "MU",
+    "countryName": "Mauritius"
+  },
+  {
+    "countryIso": "MV",
+    "countryName": "Maldives"
+  },
+  {
+    "countryIso": "MW",
+    "countryName": "Malawi"
+  },
+  {
+    "countryIso": "MX",
+    "countryName": "Mexico"
+  },
+  {
+    "countryIso": "MY",
+    "countryName": "Malaysia"
+  },
+  {
+    "countryIso": "MZ",
+    "countryName": "Mozambique"
+  },
+  {
+    "countryIso": "NA",
+    "countryName": "Namibia"
+  },
+  {
+    "countryIso": "NC",
+    "countryName": "New Caledonia"
+  },
+  {
+    "countryIso": "NE",
+    "countryName": "Niger"
+  },
+  {
+    "countryIso": "NF",
+    "countryName": "Norfolk Island"
+  },
+  {
+    "countryIso": "NG",
+    "countryName": "Nigeria"
+  },
+  {
+    "countryIso": "NI",
+    "countryName": "Nicaragua"
+  },
+  {
+    "countryIso": "NL",
+    "countryName": "Netherlands"
+  },
+  {
+    "countryIso": "NO",
+    "countryName": "Norway"
+  },
+  {
+    "countryIso": "NP",
+    "countryName": "Nepal"
+  },
+  {
+    "countryIso": "NR",
+    "countryName": "Nauru"
+  },
+  {
+    "countryIso": "NU",
+    "countryName": "Niue"
+  },
+  {
+    "countryIso": "NZ",
+    "countryName": "New Zealand"
+  },
+  {
+    "countryIso": "OM",
+    "countryName": "Oman"
+  },
+  {
+    "countryIso": "PA",
+    "countryName": "Panama"
+  },
+  {
+    "countryIso": "PE",
+    "countryName": "Peru"
+  },
+  {
+    "countryIso": "PF",
+    "countryName": "French Polynesia"
+  },
+  {
+    "countryIso": "PG",
+    "countryName": "Papua New Guinea"
+  },
+  {
+    "countryIso": "PH",
+    "countryName": "Philippines"
+  },
+  {
+    "countryIso": "PK",
+    "countryName": "Pakistan"
+  },
+  {
+    "countryIso": "PL",
+    "countryName": "Poland"
+  },
+  {
+    "countryIso": "PM",
+    "countryName": "Saint Pierre and Miquelon"
+  },
+  {
+    "countryIso": "PN",
+    "countryName": "Pitcairn"
+  },
+  {
+    "countryIso": "PR",
+    "countryName": "Puerto Rico"
+  },
+  {
+    "countryIso": "PS",
+    "countryName": "Palestine"
+  },
+  {
+    "countryIso": "PT",
+    "countryName": "Portugal"
+  },
+  {
+    "countryIso": "PW",
+    "countryName": "Palau"
+  },
+  {
+    "countryIso": "PY",
+    "countryName": "Paraguay"
+  },
+  {
+    "countryIso": "QA",
+    "countryName": "Qatar"
+  },
+  {
+    "countryIso": "RE",
+    "countryName": "Réunion"
+  },
+  {
+    "countryIso": "RO",
+    "countryName": "Romania"
+  },
+  {
+    "countryIso": "RS",
+    "countryName": "Serbia"
+  },
+  {
+    "countryIso": "RU",
+    "countryName": "Russia"
+  },
+  {
+    "countryIso": "RW",
+    "countryName": "Rwanda"
+  },
+  {
+    "countryIso": "SA",
+    "countryName": "Saudi Arabia"
+  },
+  {
+    "countryIso": "SB",
+    "countryName": "Solomon Islands"
+  },
+  {
+    "countryIso": "SC",
+    "countryName": "Seychelles"
+  },
+  {
+    "countryIso": "SD",
+    "countryName": "Sudan"
+  },
+  {
+    "countryIso": "SE",
+    "countryName": "Sweden"
+  },
+  {
+    "countryIso": "SG",
+    "countryName": "Singapore"
+  },
+  {
+    "countryIso": "SH",
+    "countryName": "Saint Helena, Ascension and Tristan da Cunha"
+  },
+  {
+    "countryIso": "SI",
+    "countryName": "Slovenia"
+  },
+  {
+    "countryIso": "SJ",
+    "countryName": "Svalbard and Jan Mayen"
+  },
+  {
+    "countryIso": "SK",
+    "countryName": "Slovakia"
+  },
+  {
+    "countryIso": "SL",
+    "countryName": "Sierra Leone"
+  },
+  {
+    "countryIso": "SM",
+    "countryName": "San Marino"
+  },
+  {
+    "countryIso": "SN",
+    "countryName": "Senegal"
+  },
+  {
+    "countryIso": "SO",
+    "countryName": "Somalia"
+  },
+  {
+    "countryIso": "SR",
+    "countryName": "Suriname"
+  },
+  {
+    "countryIso": "SS",
+    "countryName": "South Sudan"
+  },
+  {
+    "countryIso": "ST",
+    "countryName": "Sao Tome and Principe"
+  },
+  {
+    "countryIso": "SV",
+    "countryName": "El Salvador"
+  },
+  {
+    "countryIso": "SX",
+    "countryName": "Sint Maarten"
+  },
+  {
+    "countryIso": "SY",
+    "countryName": "Syria"
+  },
+  {
+    "countryIso": "SZ",
+    "countryName": "Eswatini"
+  },
+  {
+    "countryIso": "TC",
+    "countryName": "Turks and Caicos Islands"
+  },
+  {
+    "countryIso": "TD",
+    "countryName": "Chad"
+  },
+  {
+    "countryIso": "TF",
+    "countryName": "French Southern Territories"
+  },
+  {
+    "countryIso": "TG",
+    "countryName": "Togo"
+  },
+  {
+    "countryIso": "TH",
+    "countryName": "Thailand"
+  },
+  {
+    "countryIso": "TJ",
+    "countryName": "Tajikistan"
+  },
+  {
+    "countryIso": "TK",
+    "countryName": "Tokelau"
+  },
+  {
+    "countryIso": "TL",
+    "countryName": "Timor-Leste"
+  },
+  {
+    "countryIso": "TM",
+    "countryName": "Turkmenistan"
+  },
+  {
+    "countryIso": "TN",
+    "countryName": "Tunisia"
+  },
+  {
+    "countryIso": "TO",
+    "countryName": "Tonga"
+  },
+  {
+    "countryIso": "TR",
+    "countryName": "Turkey"
+  },
+  {
+    "countryIso": "TT",
+    "countryName": "Trinidad and Tobago"
+  },
+  {
+    "countryIso": "TV",
+    "countryName": "Tuvalu"
+  },
+  {
+    "countryIso": "TW",
+    "countryName": "Taiwan"
+  },
+  {
+    "countryIso": "TZ",
+    "countryName": "Tanzania"
+  },
+  {
+    "countryIso": "UA",
+    "countryName": "Ukraine"
+  },
+  {
+    "countryIso": "UG",
+    "countryName": "Uganda"
+  },
+  {
+    "countryIso": "UM",
+    "countryName": "United States Minor Outlying Islands"
+  },
+  {
+    "countryIso": "US",
+    "countryName": "United States of America"
+  },
+  {
+    "countryIso": "UY",
+    "countryName": "Uruguay"
+  },
+  {
+    "countryIso": "UZ",
+    "countryName": "Uzbekistan"
+  },
+  {
+    "countryIso": "VA",
+    "countryName": "Holy See"
+  },
+  {
+    "countryIso": "VC",
+    "countryName": "Saint Vincent and the Grenadines"
+  },
+  {
+    "countryIso": "VE",
+    "countryName": "Venezuela"
+  },
+  {
+    "countryIso": "VG",
+    "countryName": "Virgin Islands (UK)"
+  },
+  {
+    "countryIso": "VI",
+    "countryName": "Virgin Islands (US)"
+  },
+  {
+    "countryIso": "VN",
+    "countryName": "Vietnam"
+  },
+  {
+    "countryIso": "VU",
+    "countryName": "Vanuatu"
+  },
+  {
+    "countryIso": "WF",
+    "countryName": "Wallis and Futuna"
+  },
+  {
+    "countryIso": "WS",
+    "countryName": "Samoa"
+  },
+  {
+    "countryIso": "YE",
+    "countryName": "Yemen"
+  },
+  {
+    "countryIso": "YT",
+    "countryName": "Mayotte"
+  },
+  {
+    "countryIso": "ZA",
+    "countryName": "South Africa"
+  },
+  {
+    "countryIso": "ZM",
+    "countryName": "Zambia"
+  },
+  {
+    "countryIso": "ZW",
+    "countryName": "Zimbabwe"
+  }
+]

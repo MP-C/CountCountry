@@ -1,0 +1,28 @@
+﻿@page "/counter"
+@using CountCountry.Data;
+
+<h1>Counter</h1>
+
+<p role="status">Total country: @totalCountry</p>
+
+<p role="status">Current TimeZone: @timeZone</p>
+
+<p role="status">Current Country: @actualCountryName</p>
+<p role="status">Country Flag: @flag</p>
+
+<button class="btn btn-primary" @onclick="getCountry">Refresh</button>
+
+@code {
+    private int totalCountry = 0;
+    private DateTime timeZone;
+    private string actualCountryName;
+    private UrlWebViewSource flag;
+
+    private List<CountryDTO> countryDTOs;
+    private string flags;
+
+    public void getCountry()
+    {
+    
+    }
+}

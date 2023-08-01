@@ -1,0 +1,82 @@
+﻿@page "/globalview"
+@using System.Text.Json;
+@using CountCountry.Data;
+
+@*@inject TimeZoneService TimeZoneService;*@
+@*@inject WildWordService WildWordService;*@
+
+
+<h3>Global View</h3>
+<div>
+    <h5>TimeZone Details</h5>
+    @foreach (var time in allTimesZones)
+    {
+        //TimeZoneDTO
+        <div>@time.Zone</div>
+        <div>@time.a</div>
+        <div>@time.c</div>
+        <div>@time.d</div>
+        <div>@time.r</div>
+        <div>@time.u</div>
+        <div> ---------------------</div>
+    }
+    <h5>Country Details</h5>
+	@foreach (var country in wildworlds)
+    {
+        //WildWorldDTO.name = country.Select(c => c.name).ToList();
+        <div>@country.countryName</div>
+        <div>@country.countryIso</div>
+        <div> ---------------------</div>
+    }
+
+</div>
+
+@code {
+
+    //private List<TimeZoneDTO>? timeszone = new List<TimeZoneDTO>();
+    private List<TimeZoneDTO>? allTimesZones = new List<TimeZoneDTO>();
+    private List<WildWordDTO>? wildworlds = new List<WildWordDTO>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            //TimeZone
+            string tCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string tFile = System.IO.Path.Combine(tCurrentDirectory, @"wwwroot\sample-data\timezones.json");
+            string tFilePath = Path.GetFullPath(tFile);
+            var jsonResult = await File.ReadAllTextAsync(tFilePath);
+                //Console.WriteLine(jsonResult.ToString());
+            List<TimeZoneDTO> allTimesZones = JsonSerializer.Deserialize<List<TimeZoneDTO>>(jsonResult);
+            //Console.WriteLine(allTimesZones.ToString());
+
+            foreach (var resultTimesZones in allTimesZones)
+            {
+                var timeZoneDTO = new TimeZoneDTO();
+                Console.WriteLine(resultTimesZones);
+                //timeZoneDTO.Zone = resultTimesZones["Zone"];
+                //timeZoneDTO.a = resultTimesZones["a"];
+                //timeZoneDTO.c = resultTimesZones["c"];
+                //timeZoneDTO.d = resultTimesZones["d"];
+                //timeZoneDTO.r = resultTimesZones["r"];
+                //timeZoneDTO.u = resultTimesZones["u"];
+                allTimesZones.Add(timeZoneDTO);
+            }
+        }
+        catch (Exception e)
+        {
+            
+            Console.WriteLine(e);
+        }
+
+    //WildWorld
+        string wCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        string wFile = System.IO.Path.Combine(wCurrentDirectory, @"wwwroot\sample-data\wildworld.json");
+        string wFilePath = Path.GetFullPath(wFile);
+        var data = await File.ReadAllTextAsync(wFilePath);
+        Console.Write(data[1].ToString());
+        wildworlds = JsonSerializer.Deserialize<List<WildWordDTO>>(data);
+        Console.Write(wildworlds);
+
+    }
+}
