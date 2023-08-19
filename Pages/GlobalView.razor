@@ -46,21 +46,26 @@
             string tFile = System.IO.Path.Combine(tCurrentDirectory, @"wwwroot\sample-data\timezones.json");
             string tFilePath = Path.GetFullPath(tFile);
             var jsonResult = await File.ReadAllTextAsync(tFilePath);
-                //Console.WriteLine(jsonResult.ToString());
-            List<TimeZoneDTO> allTimesZones = JsonSerializer.Deserialize<List<TimeZoneDTO>>(jsonResult);
+            //Console.WriteLine(jsonResult.ToString());
+            //List<TimeZoneDTO> allTimesZones = JsonSerializer.Deserialize<List<TimeZoneDTO>>(jsonResult);
             //Console.WriteLine(allTimesZones.ToString());
+            List<Dictionary<string, TimeZoneDTO>> allTimesZones = JsonSerializer.Deserialize<List<Dictionary<string, TimeZoneDTO>>>(jsonResult);
+            Console.WriteLine(allTimesZones.ToString());
 
-            foreach (var resultTimesZones in allTimesZones)
+            foreach (var timeZoneDict in allTimesZones)
             {
-                var timeZoneDTO = new TimeZoneDTO();
-                Console.WriteLine(resultTimesZones);
-                //timeZoneDTO.Zone = resultTimesZones["Zone"];
-                //timeZoneDTO.a = resultTimesZones["a"];
-                //timeZoneDTO.c = resultTimesZones["c"];
-                //timeZoneDTO.d = resultTimesZones["d"];
-                //timeZoneDTO.r = resultTimesZones["r"];
-                //timeZoneDTO.u = resultTimesZones["u"];
-                allTimesZones.Add(timeZoneDTO);
+                foreach (var resultTimesZone in timeZoneDict)
+                {
+                    Console.WriteLine($"Time Zone Name: {resultTimesZone.Key}");
+                    Console.WriteLine($"TimeZoneDTO Details:");
+                    Console.WriteLine($"    a: {resultTimesZone.Value.a}");
+                    Console.WriteLine($"    c: {string.Join(", ", resultTimesZone.Value.c)}");
+                    Console.WriteLine($"    d: {resultTimesZone.Value.d}");
+                    Console.WriteLine($"    e: {resultTimesZone.Value.e}");
+                    Console.WriteLine($"    r: {resultTimesZone.Value.r}");
+                    Console.WriteLine($"    u: {resultTimesZone.Value.u}");
+                    Console.WriteLine();
+                }
             }
         }
         catch (Exception e)

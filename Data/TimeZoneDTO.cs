@@ -11,7 +11,8 @@ public class TimeZoneDTO
     public string Zone { get; set; }
     public string? a { get; set; }
     public List<string>? c { get; set; }
-    public string? d { get; set; }
-    public string? r { get; set; }
-    public string? u { get; set; }
+    public int? d { get; set; }
+    public int e { get; set; }
+    public int? r { get; set; }
+    public int? u { get; set; }
 }
