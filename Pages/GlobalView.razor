@@ -20,6 +20,8 @@
         <div>@time.u</div>
         <div> ---------------------</div>
     }
+    <div>@count</div>
+
     <h5>Country Details</h5>
 	@foreach (var country in wildworlds)
     {
@@ -36,9 +38,11 @@
     //private List<TimeZoneDTO>? timeszone = new List<TimeZoneDTO>();
     private List<TimeZoneDTO>? allTimesZones = new List<TimeZoneDTO>();
     private List<WildWordDTO>? wildworlds = new List<WildWordDTO>();
+    int count = 0;
 
     protected override async Task OnInitializedAsync()
     {
+        string pais;
         try
         {
             //TimeZone
@@ -46,11 +50,7 @@
             string tFile = System.IO.Path.Combine(tCurrentDirectory, @"wwwroot\sample-data\timezones.json");
             string tFilePath = Path.GetFullPath(tFile);
             var jsonResult = await File.ReadAllTextAsync(tFilePath);
-            //Console.WriteLine(jsonResult.ToString());
-            //List<TimeZoneDTO> allTimesZones = JsonSerializer.Deserialize<List<TimeZoneDTO>>(jsonResult);
-            //Console.WriteLine(allTimesZones.ToString());
             List<Dictionary<string, TimeZoneDTO>> allTimesZones = JsonSerializer.Deserialize<List<Dictionary<string, TimeZoneDTO>>>(jsonResult);
-            Console.WriteLine(allTimesZones.ToString());
 
             foreach (var timeZoneDict in allTimesZones)
             {
@@ -59,18 +59,27 @@
                     Console.WriteLine($"Time Zone Name: {resultTimesZone.Key}");
                     Console.WriteLine($"TimeZoneDTO Details:");
                     Console.WriteLine($"    a: {resultTimesZone.Value.a}");
-                    Console.WriteLine($"    c: {string.Join(", ", resultTimesZone.Value.c)}");
+                    //resultTimesZone.Value.c.Exists(value => value != "");
+                    
+                    if (resultTimesZone.Value.c != null)
+                    {
+                        Console.WriteLine($"    c: {string.Join(", ", resultTimesZone.Value.c)}");
+                    }
                     Console.WriteLine($"    d: {resultTimesZone.Value.d}");
                     Console.WriteLine($"    e: {resultTimesZone.Value.e}");
                     Console.WriteLine($"    r: {resultTimesZone.Value.r}");
                     Console.WriteLine($"    u: {resultTimesZone.Value.u}");
-                    Console.WriteLine();
+                    count = count + 1;
+                    if(count == 61)
+                    {
+                        Console.WriteLine(resultTimesZone);
+                    }
                 }
             }
         }
         catch (Exception e)
         {
-            
+            Console.WriteLine(count);
             Console.WriteLine(e);
         }
 
