@@ -1,5 +1,6 @@
 ﻿@page "/globalview"
 @using System.Text.Json;
+@using System.Globalization;
 @using CountCountry.Data;
 
 @*@inject TimeZoneService TimeZoneService;*@
@@ -8,19 +9,43 @@
 
 <h3>Global View</h3>
 <div>
-    <h5>TimeZone Details</h5>
-    @foreach (var time in allTimesZones)
+    <h5>Details about your current location: </h5>
+    <p>Country: 
+        <span id="country">
+
+        </span>
+    </p>
+    <p>State/City:
+        <span id="city_region"> 
+            @current_cityRegion;
+        </span>
+    </p>
+    <p>Continente:
+        <span id="continent">
+            @timeZoneId
+            @gmtZoneCityName
+        </span>
+    </p>
+
+    @foreach (var time in timeszone)
     {
         //TimeZoneDTO
-        <div>@time.Zone</div>
-        <div>@time.a</div>
-        <div>@time.c</div>
-        <div>@time.d</div>
-        <div>@time.r</div>
-        <div>@time.u</div>
+        <div>Zone: @time.Zone</div>
+        <div>a: @time.a</div>
+        @*<div>c: @string (time.c)</div>*@
+        <div>c: 
+             @if(time.c != null ){
+                @foreach(var abreviation in time.c)
+                {
+                    @abreviation.ToString();
+                }
+             }
+        </div>
+        <div>d: @time.d</div>
+        <div>r: @time.r</div>
+        <div>u: @time.u</div>
         <div> ---------------------</div>
     }
-    <div>@count</div>
 
     <h5>Country Details</h5>
 	@foreach (var country in wildworlds)
@@ -35,17 +60,27 @@
 
 @code {
 
-    //private List<TimeZoneDTO>? timeszone = new List<TimeZoneDTO>();
+
+
+    private List<TimeZoneDTO>? timeszone = new List<TimeZoneDTO>();
     private List<TimeZoneDTO>? allTimesZones = new List<TimeZoneDTO>();
     private List<WildWordDTO>? wildworlds = new List<WildWordDTO>();
-    int count = 0;
-
+    string timeZoneId;
+    string current_Country;
+    string current_cityRegion;
+    string gmtZoneCityName;
     protected override async Task OnInitializedAsync()
     {
-        string pais;
+
         try
         {
-            //TimeZone
+            //Time Zone Info
+            TimeZoneInfo timeZone = TimeZoneInfo.Local;
+            timeZoneId = timeZone.Id;
+            gmtZoneCityName = timeZone.ToString();
+
+
+            //TimeZones List
             string tCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string tFile = System.IO.Path.Combine(tCurrentDirectory, @"wwwroot\sample-data\timezones.json");
             string tFilePath = Path.GetFullPath(tFile);
@@ -56,41 +91,62 @@
             {
                 foreach (var resultTimesZone in timeZoneDict)
                 {
-                    Console.WriteLine($"Time Zone Name: {resultTimesZone.Key}");
-                    Console.WriteLine($"TimeZoneDTO Details:");
-                    Console.WriteLine($"    a: {resultTimesZone.Value.a}");
-                    //resultTimesZone.Value.c.Exists(value => value != "");
-                    
+                    TimeZoneDTO newZone = new TimeZoneDTO();
+                    newZone.Zone = resultTimesZone.Key;              
+                    newZone.a = resultTimesZone.Value.a;
                     if (resultTimesZone.Value.c != null)
                     {
-                        Console.WriteLine($"    c: {string.Join(", ", resultTimesZone.Value.c)}");
+                        var listAbreviation = new List<string>();
+                        foreach(var abreviationCountry in resultTimesZone.Value.c)
+                        {
+                            listAbreviation.Add(abreviationCountry);
+                        };
+                        newZone.c = listAbreviation;
                     }
-                    Console.WriteLine($"    d: {resultTimesZone.Value.d}");
-                    Console.WriteLine($"    e: {resultTimesZone.Value.e}");
-                    Console.WriteLine($"    r: {resultTimesZone.Value.r}");
-                    Console.WriteLine($"    u: {resultTimesZone.Value.u}");
-                    count = count + 1;
-                    if(count == 61)
-                    {
-                        Console.WriteLine(resultTimesZone);
-                    }
+                    newZone.d= resultTimesZone.Value.d;
+                    newZone.e= resultTimesZone.Value.e;
+                    newZone.r= resultTimesZone.Value.r;
+                    newZone.u= resultTimesZone.Value.u;
+                    timeszone.Add(newZone);
                 }
             }
+
+
+            //WildWorld List
+            string wCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string wFile = System.IO.Path.Combine(wCurrentDirectory, @"wwwroot\sample-data\wildworld.json");
+            string wFilePath = Path.GetFullPath(wFile);
+            var data = await File.ReadAllTextAsync(wFilePath);
+            wildworlds = JsonSerializer.Deserialize<List<WildWordDTO>>(data);
+
+            if (gmtZoneCityName != null || gmtZoneCityName != "")
+            {
+                current_cityRegion = timeZoneId.ToString();
+            }
+
+
+            /*
+           public void getTimeInfo()
+           { }
+           public void getTimeZone()
+           { }
+           public void getWildWorld()
+           { }
+           //TimeZone Info
+           getTimeInfo();
+
+           //TimeZone List
+           getTimeZone();
+
+           //WildWorld
+           getWildWorld();
+
+           */
+
         }
         catch (Exception e)
         {
-            Console.WriteLine(count);
             Console.WriteLine(e);
         }
-
-    //WildWorld
-        string wCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        string wFile = System.IO.Path.Combine(wCurrentDirectory, @"wwwroot\sample-data\wildworld.json");
-        string wFilePath = Path.GetFullPath(wFile);
-        var data = await File.ReadAllTextAsync(wFilePath);
-        Console.Write(data[1].ToString());
-        wildworlds = JsonSerializer.Deserialize<List<WildWordDTO>>(data);
-        Console.Write(wildworlds);
-
     }
 }

@@ -1,5 +1,78 @@
 ﻿@page "/home"
+@using System.Text.Json;
+@using System.Net.Http;
+@using System;
+@using CountCountry.Data;
 
-<h1>Principal </h1>
+<h1>Welcome to your Counting Country app</h1>
 
-Welcome to your counting country app
+@if (ipInfoDetails == null)
+{
+    <p>Collecting Position Information...</p>
+}
+else
+{
+    <div>
+        <h5>Details about your current location:</h5>
+        <p>
+            <strong>State/City</strong>:
+            <span id="city_region">
+            @countryInfoDevicePosition.city;
+            </span>
+        </p>
+
+        <p>
+            <strong>Country:</strong>
+            <span id="country">
+            @countryInfoDevicePosition.country;
+            </span>
+        </p>
+        <div>@countryInfoDevicePosition.query</div>
+        <div>@countryInfoDevicePosition.countryCode</div>
+        <div>@countryInfoDevicePosition.lat</div>
+        <div>@countryInfoDevicePosition.lon</div>
+        <div>@countryInfoDevicePosition.org</div>
+        <div>@countryInfoDevicePosition.region</div>
+        <div>@countryInfoDevicePosition.status</div>
+        <div>@countryInfoDevicePosition.zip</div>
+    </div>
+}
+
+
+@code {
+    private IpApiDTO ipInfoDetails;
+    public IpApiDTO countryInfoDevicePosition;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        try
+        {
+            string apiUrl = "http://ip-api.com/json/";
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiIpAddress = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrEmpty(apiIpAddress))
+                    {
+                        IpApiDTO ipInfoDetails = JsonSerializer.Deserialize<IpApiDTO>(apiIpAddress);
+                         countryInfoDevicePosition = ipInfoDetails;
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"HTTP request failed with status code: {response.StatusCode}");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+}
