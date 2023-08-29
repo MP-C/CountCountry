@@ -3,8 +3,7 @@
 @using System.Net.Http;
 @using System;
 @using CountCountry.Data;
-
-<h1>Welcome to your Counting Country app</h1>
+@using System.Data.SQLite;
 
 @if (ipInfoDetails == null)
 {
@@ -15,26 +14,33 @@ else
     <div>
         <h5>Details about your current location:</h5>
         <p>
-            <strong>State/City</strong>:
-            <span id="city_region">
-            @countryInfoDevicePosition.city;
+            <strong>Time Zone:</strong>
+            <span id="timezone">
+            @countryInfoDevicePosition.timezone;
             </span>
         </p>
-
         <p>
             <strong>Country:</strong>
             <span id="country">
-            @countryInfoDevicePosition.country;
+            @countryInfoDevicePosition.country, @countryInfoDevicePosition.countryCode;
             </span>
         </p>
-        <div>@countryInfoDevicePosition.query</div>
-        <div>@countryInfoDevicePosition.countryCode</div>
-        <div>@countryInfoDevicePosition.lat</div>
-        <div>@countryInfoDevicePosition.lon</div>
-        <div>@countryInfoDevicePosition.org</div>
-        <div>@countryInfoDevicePosition.region</div>
-        <div>@countryInfoDevicePosition.status</div>
-        <div>@countryInfoDevicePosition.zip</div>
+        <p>
+            <strong>State/City</strong>:
+            <span id="city_region">
+                @countryInfoDevicePosition.city; Code Postal: @countryInfoDevicePosition.zip
+            </span>
+        </p>
+        <p>
+            <strong>Global Position:</strong>
+            <span>Lat: @countryInfoDevicePosition.lat ; Long: @countryInfoDevicePosition.lon</span>
+        </p>
+        <p>
+            <strong>Equipement Network:</strong>
+            @countryInfoDevicePosition.isp</p>
+        <p> 
+            <strong>IP Device: </strong>
+            @countryInfoDevicePosition.query</p>
     </div>
 }
 
@@ -45,10 +51,10 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-
         try
         {
-            string apiUrl = "http://ip-api.com/json/";
+            string apiUrl = "http://ip-api.com/json/";  
+            /* https://freeipapi.com/api/json/ */
 
             using (HttpClient client = new HttpClient())
             {
@@ -59,9 +65,8 @@ else
                     string apiIpAddress = await response.Content.ReadAsStringAsync();
                     if (!string.IsNullOrEmpty(apiIpAddress))
                     {
-                        IpApiDTO ipInfoDetails = JsonSerializer.Deserialize<IpApiDTO>(apiIpAddress);
+                         ipInfoDetails = JsonSerializer.Deserialize<IpApiDTO>(apiIpAddress);
                          countryInfoDevicePosition = ipInfoDetails;
-
                     }
                 }
                 else
