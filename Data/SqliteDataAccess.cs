@@ -9,11 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+
 namespace CountCountry.Data
 {
     public class SqliteDataAccess
     {
-        private static List<CountryEntity> CheckCountryExist()
+		public static List<CountryEntity> CheckCountryExist()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -22,7 +23,7 @@ namespace CountCountry.Data
             }
         }
 
-        private static List<CountryEntity> LoadAllInfoCountries()
+		public static List<CountryEntity> LoadAllInfoCountries()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -31,7 +32,7 @@ namespace CountCountry.Data
             } 
         }
 
-        private static List<CountryEntity> GetTotalCountries()
+		public static List<CountryEntity> GetTotalCountries()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -40,7 +41,7 @@ namespace CountCountry.Data
             }
         }
 
-        private static List<CountryEntity> GetOrderCountriesNames()
+		public static List<CountryEntity> GetOrderCountriesNames()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -49,7 +50,7 @@ namespace CountCountry.Data
             }
         }
 
-        private static List<CountryEntity> GetBucketListWantVisit()
+		public static List<CountryEntity> GetBucketListWantVisit()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -58,7 +59,7 @@ namespace CountCountry.Data
             }
         }
 
-        private static List<CountryEntity> GetBucketListNotVisitedYet()
+		public static List<CountryEntity> GetBucketListNotVisitedYet()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -66,8 +67,8 @@ namespace CountCountry.Data
                 return output.ToList();
             }
         }
-        
-        private static List<CountryEntity> GetBucketListAlreadyVisited()
+
+		public static List<CountryEntity> GetBucketListAlreadyVisited()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -76,7 +77,7 @@ namespace CountCountry.Data
             }
         }
 
-        private static List<CountryEntity> GetLongerStayCountry()
+		public static List<CountryEntity> GetLongerStayCountry()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -85,7 +86,7 @@ namespace CountCountry.Data
             }
         }
 
-        private static List<CountryEntity> GetAllStaysCountryDetails()
+		public static List<CountryEntity> GetAllStaysCountryDetails()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -94,7 +95,7 @@ namespace CountCountry.Data
             }
         }
 
-        private static void SaveCountryRegister(CountryEntity country)
+		public static void SaveCountryRegister(CountryEntity country)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -103,8 +104,8 @@ namespace CountCountry.Data
             }
         }
 
-        // Allows to stay open correctly, and close proprely the DB even when something missing, or goes wrong
-        private static string LoadConnectionString(string id = "Default")
+		// Allows to stay open correctly, and close proprely the DB even when something missing, or goes wrong
+		public static string LoadConnectionString(string id = "Default")
         {
             IConfiguration configuration = new ConfigurationBuilder()
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
