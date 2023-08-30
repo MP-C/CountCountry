@@ -50,7 +50,14 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="SQLite" Version="3.13.0" />
+      <PackageReference Include="Dapper" Version="2.0.151" />
+      <PackageReference Include="System.Data.SQLite.Core" Version="1.0.118" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="CountCountryDB.db">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

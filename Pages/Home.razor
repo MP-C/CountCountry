@@ -3,7 +3,6 @@
 @using System.Net.Http;
 @using System;
 @using CountCountry.Data;
-@using System.Data.SQLite;
 
 @if (ipInfoDetails == null)
 {
@@ -74,6 +73,8 @@ else
                     Console.WriteLine($"HTTP request failed with status code: {response.StatusCode}");
                 }
             }
+
+        
         }
         catch (Exception ex)
         {
