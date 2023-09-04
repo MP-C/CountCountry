@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.Sqlite;
+using System.Globalization;
 
 namespace CountCountry.Data
 {
@@ -45,24 +46,35 @@ namespace CountCountry.Data
                 //}
 
                 //using (var connection = new SqliteConnection(@"Data Source=example.db3"))
+
+                List<CountryEntity> listResults = new List<CountryEntity>();
                 using (var connection = new SqliteConnection(@"Data Source=C:\Users\capelam\source\repos\CountCountry\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\CountCountryDB.db3"))
                 {
                     connection.Open();
 
                     var command = connection.CreateCommand();
-                    command.CommandText = @"SELECT id, CountryName FROM CountryRegister;";
-                    //command.Parameters.AddWithValue("$id", id);
+                    command.CommandText = @"SELECT * FROM CountryRegister;";
 
                     using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            var output = reader.GetString(1);
+                            var output = new CountryEntity();
+                            output.Id = reader.GetInt32(0);
+                            output.CountryName = reader.GetString(1);
+                            output.CityName = reader.GetString(2);
+                            output.StartDateCount = DateTime.ParseExact(reader.GetString(3).ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                            output.EndDateCount = DateTime.ParseExact(reader.GetString(4).ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                            output.InsertDate = DateTime.ParseExact(reader.GetString(5).ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                            output.BucketList = reader.GetString(6);
+                            output.TotalDaysStay = reader.GetString(7);
+                            output.SharedStayCount = reader.GetString(8);
 
+                            listResults.Add(output);
                         }
                     }
                 }
-                return new List<CountryEntity>();
+                return listResults;
             }
             catch (Exception e)
             {

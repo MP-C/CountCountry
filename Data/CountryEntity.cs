@@ -8,6 +8,8 @@ namespace CountCountry.Data
 {
     public class CountryEntity
     {
+        internal DateTime StartDateCount;
+
         public int Id { get; set; }
         public string CountryName { get; set; }
         public string CityName { get; set; }
