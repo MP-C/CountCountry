@@ -48,6 +48,9 @@ else
     private IpApiDTO ipInfoDetails;
     public IpApiDTO countryInfoDevicePosition;
 
+    private List<CountryEntity> listCountries = new List<CountryEntity>();
+
+
     protected override async Task OnInitializedAsync()
     {
         try
@@ -64,8 +67,38 @@ else
                     string apiIpAddress = await response.Content.ReadAsStringAsync();
                     if (!string.IsNullOrEmpty(apiIpAddress))
                     {
-                         ipInfoDetails = JsonSerializer.Deserialize<IpApiDTO>(apiIpAddress);
-                         countryInfoDevicePosition = ipInfoDetails;
+                        ipInfoDetails = JsonSerializer.Deserialize<IpApiDTO>(apiIpAddress);
+                        countryInfoDevicePosition = ipInfoDetails;
+                    }
+
+                    if (ipInfoDetails.country != null)
+                    {
+                        CountryEntity newCountry = new();
+                        newCountry.CountryName = ipInfoDetails.country;
+                        var countryId = SqliteDataAccess.CheckCountryExist(newCountry);
+
+                        if (countryId == null)
+                        {
+                            newCountry.CountryName = ipInfoDetails.country;
+                            newCountry.CityName = ipInfoDetails.city+";"+ipInfoDetails.zip;
+                            newCountry.StarDateCount = DateTime.Today;
+                            newCountry.EndDateCount = DateTime.Today;
+                            newCountry.InsertDate = DateTime.Now;
+                            newCountry.BucketList = "0";
+                            newCountry.TotalDaysStay = "1";
+                            newCountry.SharedStayCount = "email";
+                            //newCountry.Details = 
+                            //    ipInfoDetails.countryCode + ";" + ipInfoDetails.lat + ipInfoDetails.lon+";"+ipInfoDetails.org +";" 
+                            //    +ipInfoDetails.org + ";" + ipInfoDetails.timezone + ";"+ipInfoDetails.regionName;
+                            SqliteDataAccess.SaveCountryRegister(newCountry);
+                        }
+                        else
+                        {
+                            //verify if is a bucketList
+                            //verify if is a have someoneElse
+                            //verify if is lastDate If(lastDate= yesterday) => lastDate = Today (UPDATE) // IF NOT (new entry)
+
+                        }
                     }
                 }
                 else
@@ -73,8 +106,6 @@ else
                     Console.WriteLine($"HTTP request failed with status code: {response.StatusCode}");
                 }
             }
-
-        
         }
         catch (Exception ex)
         {

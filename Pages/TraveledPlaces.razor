@@ -67,12 +67,12 @@ else
 
 @code {
 	private WeatherForecast[] forecasts;
-	private List<CountryEntity> listCountries = SqliteDataAccess.LoadAllInfoCountries();
+	private List<CountryEntity> listCountries = new List<CountryEntity>(); //SqliteDataAccess.LoadAllInfoCountries();
 
 	protected override async Task OnInitializedAsync()
 	{
 		forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-
+		
 		listCountries = SqliteDataAccess.LoadAllInfoCountries();
 	}
 }
