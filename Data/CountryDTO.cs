@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CountCountry.Data
 {
-    internal class CountryDTO
+    public class CountryDTO
     {
         public int Id { get; set; }
         public string countryName { get; set; }

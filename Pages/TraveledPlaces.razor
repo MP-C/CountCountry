@@ -1,6 +1,7 @@
 ﻿@page "/traveledplaces"
-
+@using System.Collections.Generic
 @using CountCountry.Data
+
 @inject WeatherForecastService ForecastService
 
 <h3>Traveled Places</h3>
@@ -34,13 +35,44 @@ else
 			}
 		</tbody>
 	</table>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>CountryName</th>
+					<th>CityName</th>
+					<th>StartDateCount</th>
+					<th>EndDateCount</th>
+					<th>InsertDate</th>
+					<th>BucketList</th>
+					<th>SharedStayCount</th>
+				</tr>
+			</thead>
+			<tbody>
+			@foreach (var country in listCountries)
+			{
+						<tr>
+					<td>@country.CountryName</td>
+					<td>@country.CityName</td>
+					<td>@country.StarDateCount</td>
+					<td>@country.EndDateCount</td>
+					<td>@country.InsertDate</td>
+					<td>@country.BucketList</td>
+					<td>@country.SharedStayCount</td>
+						</tr>
+			}
+			</tbody>
+		</table>
 }
 
 @code {
 	private WeatherForecast[] forecasts;
+	private List<CountryEntity> listCountries = new List<CountryEntity>(); //SqliteDataAccess.LoadAllInfoCountries();
 
 	protected override async Task OnInitializedAsync()
 	{
 		forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+		
+		listCountries = SqliteDataAccess.LoadAllInfoCountries();
 	}
 }
